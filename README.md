@@ -1,7 +1,7 @@
 # OpenOLT
 
-O OpenOLT é uma biblioteca de código aberto para integração de OLT, um equipamentos utilizados por provedores de internet
-para transmitir sinal óptico. meio de pagamento muito comum no Brasil. O foco é ser simples e ter uma arquitetura compatível com os recursos mais modernos do PHP.
+O OpenOLT é uma biblioteca de código aberto para integração de OLT, um equipamento utilizados por provedores de internet
+para transmitir sinal óptico. 
 
 ## Instalação
 Em breve...
@@ -31,11 +31,11 @@ Content-Length: 342
 }
 ```
 
-Sim, só isso! Metodo post para provisionar, desprovisionar, ler sinal. 
+Sim, só isso! Esse exemplo é para provisionamento de ONU. 
 
 ## OLT's suportados
 
-Atualmente o OpenBoleto funciona com os bancos abaixo:
+Atualmente o OpenOLT funciona com os seguintes fabricantes:
 
 <table>
     <tr>
