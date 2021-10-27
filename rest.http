@@ -1,0 +1,16 @@
+POST http://127.0.0.1:5000/teste HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Lucas",
+    "idade": 20
+
+}
+
+
+
+###
+
+POST https://api.toolbox.tv.br/v1/user/03588313699/status HTTP/1.1
+content-type: application/json
+
