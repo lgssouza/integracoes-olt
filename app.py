@@ -127,47 +127,6 @@ def atualizaONUPon():
         Fiberhome.conexao(dados['ip_servidor_tl1'], int(dados['porta_servidor_tl1']), dados['usuario_anm'], dados['senha_anm'])
         return Fiberhome.atualizaONUPon(dados['ip_olt'],dados['clientes'])
 
-@app.route("/derrubaCliente", methods=['POST'])
-def derrubaCliente():
-    dados = request.json
-    #return dados
-    """
-    host = "68.183.8.21"
-    port = 22022
-    username = "root"
-    password = 'pLasqMFY!uPU'
-
-    command = "ls"
-
-    ssh = paramiko.SSHClient()
-    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    #ssh.connect(host, port, username)
-    ssh.connect(host, port, username, password)
-
-
-    stdin, stdout, stderr = ssh.exec_command(command)
-    lines = stdout.readlines()
-    print(lines)"""
-    #cria a instância do ssh client
-    ssh = paramiko.SSHClient()
-
-    #determina que a conexão será a partir de uma chave ssh ja conhecida pelo servidor
-    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-
-    ssh.connect(dados['ip_servidor'], 22022, username=dados['usuario'], password=dados['senha'])
-
-    command = "echo 'Acct-Session-Id="+dados['acctsessionid']+"' | radclient -t 0 "+dados['nasipaddress']+":3799 'disconnect' q0El49TG"
-    command = "".join("echo 'Acct-Session-Id=", dados['acctsessionid'],"' | radclient -t 0 ", dados['nasipaddress'], ":3799 'disconnect' q0El49TG")
-    #command = "echo 'User-Name="+dados['usuario_pppoe']+"' | radclient -t 0 "+dados['nasipaddress']+":3799 'disconnect' q0El49TG"
-    stdin, stdout, stderr = ssh.exec_command(command)
-
-    print(stdout.readlines())
-
-    ssh.close()
-    print(dados)
-    print(command)
-    return "ok"
-
 #app.run()
 
 if __name__ == "__main__":
